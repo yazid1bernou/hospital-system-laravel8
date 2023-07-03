@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Dashboard\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Backend  Routes
@@ -10,4 +10,6 @@ use Illuminate\Support\Facades\Route;
 | 
 |
 */
+
+Route::get('/Admin_Dashboard' , [DashboardController::class , 'index']);
 
