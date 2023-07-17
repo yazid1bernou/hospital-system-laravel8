@@ -25,8 +25,16 @@ Route::middleware('guest')->group(function () {
 
     Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('login.user');
 
-//########################  Route Admin ################################################
-Route::post('login/admin', [AdminController::class, 'store'])->name('login.admin');
+    Route::post('logout/user', [AuthenticatedSessionController::class, 'destroy'])
+    ->name('logout.user');
+//########################  Route Admin ################################################ 
+    Route::post('login/admin', [AdminController::class, 'store'])->name('login.admin');
+
+    Route::post('logout/admin', [AdminController::class, 'destroy'])
+    ->name('logout.admin');
+
+
+
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->name('password.request');
@@ -58,6 +66,5 @@ Route::middleware('auth')->group(function () {
 
     Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
 
-    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
-                ->name('logout');
+   
 });
