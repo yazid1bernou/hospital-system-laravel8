@@ -72,7 +72,7 @@
 											  {{-- form admin --}}
 											  <div class="loginform" id="admin">
 												<h5 class="font-weight-semibold mb-4">الدخول أدمن</h5>
-												<form method="POST" action="{{ route('login.user') }}">
+												<form method="POST" action="{{ route('login.admin') }}">
                                                    @csrf
 													<div class="form-group">
 														<label>Email</label> <input class="form-control" placeholder="Enter your email" type="email" name="email" :value="old('email')" required autofocus >
